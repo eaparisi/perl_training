@@ -35,10 +35,12 @@ if ($responseResult == 0) {
 	
 	my $sqrRootArgument = $b*$b - 4*$a*$c;
 	
-	if ($sqrRootArgument >= 0) {
+	if ($sqrRootArgument > 0) {
 		my $sqrRoot = sqrt ($sqrRootArgument);	
 		$result1 = (-$b + $sqrRoot) / 2*$a;
 		$result2 = (-$b - $sqrRoot) / 2*$a;
+	} elsif ($sqrRootArgument == 0) {
+		$result1 = $result2 = (-$b) / 2*$a;		
 	} else {
 		print STDERR "Error - no real solutions: SqrRoot argument not positive\n";
 		$responseResult = 1;
