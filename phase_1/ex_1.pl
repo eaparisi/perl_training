@@ -1,9 +1,5 @@
 #!/usr/bin/perl
 
-# Detect no numeric
-# looks_like_number - http://perlmaven.com/automatic-value-conversion-or-casting-in-perl
-# o usar reg expr
-
 use v5.14;
 use PadWalker;
 use Scalar::Util qw(looks_like_number);
@@ -21,7 +17,7 @@ for (my $counter = 0; $counter < 3; $counter++) {
 		$param = 0;
 	} elsif (!looks_like_number($param)) {
 		print STDERR "Error - bad input: value '$param' is not number\n";
-		$responseResult = 1;
+		$responseResult = 1;	# Execution with errors
 		next;
 	}
 	$defParameters[$counter] = $param;
@@ -43,7 +39,7 @@ if ($responseResult == 0) {
 		$result1 = $result2 = (-$b) / 2*$a;		
 	} else {
 		print STDERR "Error - no real solutions: SqrRoot argument not positive\n";
-		$responseResult = 1;
+		$responseResult = 1;	# Execution with errors
 	}
 }
 
