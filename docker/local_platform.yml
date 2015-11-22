@@ -1,0 +1,14 @@
+# -----------------------------------------------------------------------------------------------------
+
+perl:
+  build: Dockerfile_Perl
+  ports:
+   - "80:80"
+   - "127.0.0.1:1222:22"
+  environment:
+   - ROOT_PASS=myperl1234
+  volumes:
+   - /home/eric/git/perl_training/phase_1:/usr/lib/cgi-bin/phase_1:rw
+   - /home/eric/git/perl_training/cgi-debug:/usr/lib/cgi-debug:rw
+
+# -----------------------------------------------------------------------------------------------------

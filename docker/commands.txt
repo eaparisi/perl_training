@@ -1,0 +1,21 @@
+
+http://perl.local
+
+http://perl.local/cgi-bin/phase_1/ex_html_1.pl
+
+Módulos instalados
+for M in `perldoc -t perllocal|grep Module |sed -e 's/^.*" //'`; do V=`perldoc -t perllocal|awk "/$M/{y=1;next}y" |grep VERSION |head -n 1`; printf "%30s %s\n" "$M" "$V"; done |sort
+
+sudo apache2ctl -k start -X -D PERLDB
+
+docker rmi $(docker images -f "dangling=true" -q)
+
+http://plosquare.blogspot.com.ar/2009/04/debugging-modperl-applications-with.html
+
+http://courseweb.lis.illinois.edu/~bnsmith3/perl/manual.pdf
+
+http://wiki.eprints.org/w/EclipseEpicPerlDebug
+
+http://www.epic-ide.org/guide/ch06s02.php#N10812
+
+http://www.epic-ide.org/guide/ch06.php

@@ -1,8 +1,16 @@
 #!/usr/bin/perl
 
 use v5.14;
-use PadWalker;
-use Data::Dumper qw(Dumper);
+
+print "Content-type: text/html\n\n";
+print <<htmlcode;
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Ex</title>
+	</head>
+	<body>
+htmlcode
 
 my @numbers;
 my %equivalences=(
@@ -74,6 +82,9 @@ close DATA_NUMBERS;
 
 my @orderedNumbers = sort {$a->[0] <=> $b->[0]} @numbers;
 
-say $_->[1], " => ", $_->[0] foreach (@orderedNumbers);
+print $_->[1], " => ", $_->[0], '<br>' foreach (@orderedNumbers);
 
-exit 0;
+print <<htmlcode;
+	</body>
+</html>
+htmlcode
