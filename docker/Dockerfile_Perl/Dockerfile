@@ -30,20 +30,31 @@ RUN apt-get install libpadwalker-perl
 # Perl Cpan
 RUN apt-get install -y cpanminus make apt-utils
 
-# Perl Cpan
+# Install Gcc
 RUN apt-get install -y gcc
-
-# Perl Cpan Modules
-# RUN cpanm Log::Log4perl
-RUN cpanm PadWalker
-RUN cpanm Apache::DB
-RUN mkdir /usr/include/apache2 && cpanm Apache2::Reload
 
 # Perl-doc
 RUN apt-get install -y perl-doc
 
 # Nmap
 RUN apt-get install -y nmap
+
+# Perl Cpan Modules
+# RUN cpanm Log::Log4perl
+RUN cpanm PadWalker
+RUN cpanm Apache::DB
+RUN mkdir /usr/include/apache2 && cpanm Apache2::Reload
+RUN cpanm ExtUtils::Depends
+RUN apt-get install -y pkg-config && cpanm ExtUtils::PkgConfig
+RUN apt-get install -y libcairo2-dev libjpeg8-dev libpango1.0-dev libgif-dev build-essential g++
+RUN cpanm Cairo
+RUN cpanm Data::Dumper
+RUN cpanm Data::Dumper::HTML
+RUN cpanm Data::Printer
+RUN cpanm Data::TreeDumper::Renderer::DHTML
+RUN cpanm Data::TreeDumper
+RUN cpanm Switch
+RUN cpanm CGI
 
 # Add Apache Perl Conf
 ADD ./perl.conf /etc/apache2/conf-available/serve-cgi-bin.conf 

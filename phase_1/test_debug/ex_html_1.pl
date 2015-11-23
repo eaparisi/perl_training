@@ -2,6 +2,10 @@
 
 use v5.14;
 
+my $dummy = 1;
+
+# $DB::single = 1;
+
 print "Content-type: text/html\n\n";
 print <<htmlcode;
 <!DOCTYPE html>
@@ -47,7 +51,7 @@ my %equivalences=(
     millon=>"*1000000"
 );
 
-open(DATA_NUMBERS, "<:utf8", "data/ex_4_data.txt") || die "Can't open data: $!\n";
+open(DATA_NUMBERS, "<:utf8", "phase_1/data/ex_4_data.txt") || die "Can't open data: $!\n";
 
 while (my $line = <DATA_NUMBERS>) {
 
