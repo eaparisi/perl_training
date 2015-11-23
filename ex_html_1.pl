@@ -2,6 +2,8 @@
 
 use v5.14;
 
+my $dummy = 1;
+
 $DB::single = 1;
 
 print "Content-type: text/html\n\n";

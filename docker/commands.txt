@@ -2,6 +2,7 @@
 http://perl.local
 
 http://perl.local/cgi-bin/ex_html_1.pl
+http://perl.local/cgi-bin/phase_1/ex_html_1.pl
 
 Módulos instalados
 for M in `perldoc -t perllocal|grep Module |sed -e 's/^.*" //'`; do V=`perldoc -t perllocal|awk "/$M/{y=1;next}y" |grep VERSION |head -n 1`; printf "%30s %s\n" "$M" "$V"; done |sort
@@ -20,3 +21,5 @@ http://wiki.eprints.org/w/EclipseEpicPerlDebug
 http://www.epic-ide.org/guide/ch06s02.php#N10812
 
 http://www.epic-ide.org/guide/ch06.php
+
+ssh root@0.0.0.0 -p 1222
