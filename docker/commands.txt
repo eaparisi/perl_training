@@ -1,12 +1,13 @@
 
 http://perl.local
 
-http://perl.local/cgi-bin/phase_1/ex_html_1.pl
+http://perl.local/cgi-bin/ex_html_1.pl
 
 Módulos instalados
 for M in `perldoc -t perllocal|grep Module |sed -e 's/^.*" //'`; do V=`perldoc -t perllocal|awk "/$M/{y=1;next}y" |grep VERSION |head -n 1`; printf "%30s %s\n" "$M" "$V"; done |sort
 
 sudo apache2ctl -k start -X -D PERLDB
+apache2ctl -k start -X -DPERLDB
 
 docker rmi $(docker images -f "dangling=true" -q)
 

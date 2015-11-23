@@ -42,9 +42,12 @@ RUN mkdir /usr/include/apache2 && cpanm Apache2::Reload
 # Perl-doc
 RUN apt-get install -y perl-doc
 
+# Nmap
+RUN apt-get install -y nmap
+
 # Add Apache Perl Conf
 ADD ./perl.conf /etc/apache2/conf-available/serve-cgi-bin.conf 
-
+ 
 # Entrypoint
 ADD ./init.sh /root/run.sh 
 RUN chmod +x /root/run.sh
