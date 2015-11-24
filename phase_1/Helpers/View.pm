@@ -30,6 +30,7 @@ package Helpers::View;
 				$top .= "<html>";
 				$top .= "<head>";
 				$top .= "<title>Ex</title>";
+				$top .= "<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js\"></script>";
 				$top .= "</head>";
 				$top .= "<body style='background-color: #ccc;'>";
 				print $top; 

@@ -2,7 +2,6 @@
 
 use v5.14;
 
-use Switch;
 use Helpers::Env;
 use Data::Printer;
 
@@ -24,14 +23,8 @@ package Helpers::Debug;
 			print "<PRE>";
 			print $text;
 			print "</PRE>";
-			print "<PRE>";
-			print "Server Name:       $ENV{SERVER_NAME}\n";
-			print "Listening on Port: $ENV{SERVER_PORT}\n";
-			print "Server Software:   $ENV{SERVER_SOFTWARE}\n";
-			print "Server Protocol:   $ENV{SERVER_PROTOCOL}\n";
-			print "CGI Version:       $ENV{GATEWAY_INTERFACE}\n";
-			print "</PRE>";
 		} else {
+			print "\n";
 			my $result = \&Data::Printer::p($_[0], colored => 1);
 			print "\n";
 			return;
