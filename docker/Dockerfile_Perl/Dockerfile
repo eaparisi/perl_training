@@ -55,6 +55,8 @@ RUN cpanm Data::TreeDumper::Renderer::DHTML
 RUN cpanm Data::TreeDumper
 RUN cpanm Switch
 RUN cpanm CGI
+RUN cpanm Data::TreeDumper::OO
+RUN cpanm HTML::TextToHTML
 
 # Add Apache Perl Conf
 ADD ./perl.conf /etc/apache2/conf-available/serve-cgi-bin.conf 

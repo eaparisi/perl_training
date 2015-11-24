@@ -2,20 +2,33 @@
 
 use v5.14;
 
-# use CGI qw(:standard);
-# use CGI::Carp qw(warningsToBrowser fatalsToBrowser);
-# use Data::Dumper::HTML qw(dumper_html);
-
+use Cairo;
 use Helpers::View;
-use Helpers::Debug;
+
+my $surface = Cairo::ImageSurface->create ('argb32', 600, 600);
+my $cr = Cairo::Context->create ($surface);
+ 
+$cr->rectangle(10, 10, 100, 100);
+$cr->set_source_rgb(0, 0, 0);
+$cr->fill;
+ 
+$cr->rectangle(100, 100, 150, 40);
+$cr->set_source_rgb(1, 1, 1);
+$cr->fill;
+ 
+$cr->rectangle(100, 200, 450, 90);
+$cr->set_source_rgb(0.1,0.2,0.9);
+$cr->fill;
+ 
+$cr->show_page;
+ 
+$surface->write_to_png ('/var/www/html/imgs/output.jpg');
+
+# ---------------------------------------------- VIEW ---------------------------------------
 
 my $view = Helpers::View->new();
-my $debug = Helpers::Debug->new();
-
-$view->setEnvironment();
 $view->renderTop();
 
-$view->renderContent('Hola');
-$debug->print($view, $view->{environment});
+print "<img src='/imgs/output.jpg'/>";
 
 $view->renderBottom();
