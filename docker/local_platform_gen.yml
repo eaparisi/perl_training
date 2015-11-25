@@ -10,8 +10,8 @@ perlapache:
   environment:
    - ROOT_PASS=myperl1234
   volumes:
-   - /home/eric/git/perl_training/phase_1:/usr/lib/cgi-bin/phase_1:rw
-   - /home/eric/git/perl_training/cgi-debug:/usr/lib/cgi-debug:rw
+   - local_Path_to_Phase1:/usr/lib/cgi-bin/phase_1:rw
+   - local_Path_to_Debug1:/usr/lib/cgi-debug:rw
 
 # -----------------------------------------------------------------------------------------------------
 
@@ -23,6 +23,6 @@ mysql:
    - MYSQL_ROOT_PASSWORD=mydb1234
    - MYSQL_DATABASE=training
   volumes:
-   - /home/ericparisi/TrainingDB:/var/lib/mysql:rw
+   - local_Path_to_DB_Storage:/var/lib/mysql:rw
 
 # -----------------------------------------------------------------------------------------------------
