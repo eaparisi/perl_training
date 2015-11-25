@@ -10,12 +10,24 @@ package Figures::Square;
 
 	sub drawFigure {
 		my $self = shift;
-		my $pAx = $self->{data}->{'square'}{'pointA'}{'x'};
-		my $pAy = $self->{data}->{'square'}{'pointA'}{'y'};
-		my $width = $self->{data}->{'square'}{'width'}{'x'};
+		my ($pAx, $pAy, $width) = $self->calcInternalValues();
 		$self->{cr}->rectangle($pAx, $pAy, $width, $width);
 		$self->{cr}->set_source_rgb(0.4, 0.4, 0.4);
 		$self->{cr}->fill;
+	}
+
+	sub calcInternalValues {
+		my $self = shift;
+		my $pAx = $self->{data}->{'square'}{'pointA'}{'x'};
+		my $pAy = $self->{data}->{'square'}{'pointA'}{'y'};
+		my $width = $self->{data}->{'square'}{'width'}{'x'};
+		return ($pAx, $pAy, $width);
+	}
+
+	sub getArea {
+		my $self = shift;
+		my ($pAx, $pAy, $width) = $self->calcInternalValues();
+		my $area = $width**2;
 	}
 
 	1;
