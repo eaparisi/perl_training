@@ -22,24 +22,7 @@ my $figure = Figures::FiguresAppFactory->new(%data);
 my $result1 = $figure->drawFigure();
 my $result2 = $figure->saveToFile('/var/www/html/imgs/figure.jpg');
 
-#if ($result->{'status'} eq 'ok') {
-
-#	print "Figure Type: " . $figure->{type} . '<br>';
-	print "Figure Area: " . $figure->getArea() . '<br>';
-#	print "Figure Draw: <br>";
-	print "<img src='/imgs/figure.jpg' border='2'/>";
-
-#} else {
-
-#	print '<br>';
-#	print "Errors where found !<br>";
-#	print "Validations: <br>";
-#	print Dumper $result->{'errors'};
-
-#}
-
-#my $rectAPointX = $data{'rectangle'}{'pointA'}{'x'};
-#print Dumper $rectAPointX;
-#print '<br><br>';
+print "Figure Area: " . $figure->getArea() . '<br>';
+print "<img src='/imgs/figure.jpg' border='2'/>";
 
 $view->renderBottom();

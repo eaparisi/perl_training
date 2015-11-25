@@ -11,7 +11,6 @@ package Figures::Surface;
 		my $surface = Cairo::ImageSurface->create('argb32', 800, 600);
 		my $cr = Cairo::Context->create($surface);
 		my %data = @_;
-		# print $data{'rectangle'}{'pointA'}{'x'} . ':------------<br>';
 		my $self = {
 			surface => $surface,
 			cr => $cr,
