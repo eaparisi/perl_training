@@ -1,14 +1,28 @@
 # -----------------------------------------------------------------------------------------------------
 
-perl:
+perlapache:
   build: Dockerfile_Perl
+  links:
+   - mysql
   ports:
-   - "80:80"
+   - "127.0.0.1:80:80"
    - "127.0.0.1:1222:22"
   environment:
    - ROOT_PASS=myperl1234
   volumes:
    - /home/ericparisi/git/perl_training/phase_1:/usr/lib/cgi-bin/phase_1:rw
    - /home/ericparisi/git/perl_training/cgi-debug:/usr/lib/cgi-debug:rw
+
+# -----------------------------------------------------------------------------------------------------
+
+mysql:
+  image: mysql:5.7.9
+  ports:
+   - "127.0.0.1:3306:3306"
+  environment:
+   - MYSQL_ROOT_PASSWORD=mydb1234
+   - MYSQL_DATABASE=training
+  volumes:
+   - /home/ericparisi/TrainingDB:/var/lib/mysql:rw
 
 # -----------------------------------------------------------------------------------------------------

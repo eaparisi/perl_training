@@ -20,7 +20,7 @@ print <<HTML;
 		<input type="radio" name="figure" value="contCircleParams" checked>Circle<br>
 		<input type="radio" name="figure" value="contTriangleParams" checked>Triangle<br>
 	
-		<br><br>
+		<br>
 	
 		<div id="contRectangleParams" style="display:none">
 			<div><b>Rectangle Params:</b></div>
@@ -47,10 +47,17 @@ print <<HTML;
 			<input type="text" name="triangle[pointC][x]" placeholder="Point C, X Coord"><input type="text" name="triangle[pointC][y]" placeholder="Point C, Y Coord">Point C<br>
 		</div>
 		
-		<br><br>
+		<br>
 		<input id="submitButton" type="submit" value="Submit" style="display:none">
 
 	</form>
+	
+	<br><br>
+	<b>Figures in DB: </b>
+	<a href='viewDbFigures.pl'>View</a>
+	<br><br>
+	<b>Empty DB: </b>
+	<a href='emptyDB.pl'>Execute</a>
 	
 HTML
 

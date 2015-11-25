@@ -12,8 +12,11 @@ print <<HTML;
 				\$('#contTriangleParams').hide();
 				var element = '#'+this.value;
 				\$(element).show();
-				\$('#submitButton').show();
 			});
+			var \$radios = \$('input:radio[name=figure]');
+			\$radios.filter('[value=contRectangleParams]').prop('checked', true);
+			\$('#contRectangleParams').show();
+			\$('#submitButton').show();
 		});
 	</script>
 HTML

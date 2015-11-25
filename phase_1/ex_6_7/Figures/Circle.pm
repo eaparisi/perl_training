@@ -11,11 +11,13 @@ package Figures::Circle;
 	our $pi = 4 * atan2(1, 1);
 
 	sub drawFigure {
+
 		my $self = shift;
 		my ($cx, $cy, $px, $py, $radius) = $self->calcInternalValues();
 		my $val = 2 * $pi;
+
 		$self->{cr}->arc($cx, $cy, $radius, 0, $val);
-		$self->{cr}->set_source_rgb(0.4, 0.4, 0.4);
+		$self->{cr}->set_source_rgb(rand(1), rand(1), rand(1));
 		$self->{cr}->fill;
 
 		$self->{cr}->arc($cx, $cy, 3, 0, $val);

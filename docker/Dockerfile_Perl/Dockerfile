@@ -1,4 +1,4 @@
-# Use Ubuntu 14.04 as base image
+# Base image
 FROM ubuntu:14.04.3
 
 # Update package lists
@@ -57,6 +57,11 @@ RUN cpanm Switch
 RUN cpanm CGI
 RUN cpanm Data::TreeDumper::OO
 RUN cpanm HTML::TextToHTML
+RUN cpanm DBI
+
+# MySQL Client And Perl Driver
+RUN apt-get install -y mysql-client
+RUN apt-get install -y libdbd-mysql-perl
 
 # Add Apache Perl Conf
 ADD ./perl.conf /etc/apache2/conf-available/serve-cgi-bin.conf 
